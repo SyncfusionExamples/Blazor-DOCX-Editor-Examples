@@ -1,4 +1,4 @@
-# Syncfusion&reg; of the Blazor DOCX Editor
+# Syncfusion&reg; Blazor DOCX Editor
 
 The Syncfusion<sup style="font-size:70%">&reg;</sup> [Blazor DOCX Editor](https://www.syncfusion.com/docx-editor-sdk/blazor-docx-editor) (Document Editor) is a feature-rich, user-interactive component that enables creating, editing, viewing, and printing Word documents with advanced formatting, editing capabilities, and broad support for document import and export formats.
 
