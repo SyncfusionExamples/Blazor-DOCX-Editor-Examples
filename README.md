@@ -44,7 +44,7 @@ The Syncfusion<sup style="font-size:70%">&reg;</sup> [Blazor DOCX Editor](https:
 
 - **Documentation:**   [Syncfusion® Blazor Word Processor - Documentation](https://help.syncfusion.com/document-processing/word/word-processor/blazor/overview?utm_source=github&utm_medium=listing&utm_campaign=github-blazor-docx-editor-examples) 
 
-- **Online demo:**   [Syncfusion® Blazor Word Processor - Online demo](https://document.syncfusion.com/#/docx-editor-sdk?utm_source=github&utm_medium=listing&utm_campaign=github-blazor-docx-editor-examples) 
+- **Online demo:**   [Syncfusion® Blazor Word Processor - Server Online demo](https://document.syncfusion.com/demos/docx-editor/blazor-server/document-editor/default-functionalities?utm_source=github&utm_medium=listing&utm_campaign=github-blazor-docx-editor-examples) and [Syncfusion® Blazor Word Processor - WASM Online demo](https://document.syncfusion.com/demos/docx-editor/blazor-wasm/document-editor/default-functionalities?utm_source=github&utm_medium=listing&utm_campaign=github-blazor-docx-editor-examples) 
 
 # Support and feedback
 
