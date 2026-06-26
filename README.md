@@ -1,4 +1,4 @@
-# Syncfusion&reg; Blazor DOCX Editor
+# Syncfusion&reg; Blazor DOCX Editor (Document Editor)
 
 The Syncfusion<sup style="font-size:70%">&reg;</sup> [Blazor DOCX Editor](https://www.syncfusion.com/docx-editor-sdk/blazor-docx-editor?utm_source=github&utm_medium=github&utm_campaign=github-blazor-docx-editor-examples) (Document Editor) is a feature-rich, user-interactive component that enables creating, editing, viewing, and printing Word documents with advanced formatting, editing capabilities, and broad support for document import and export formats.
 
@@ -40,11 +40,11 @@ The Syncfusion<sup style="font-size:70%">&reg;</sup> [Blazor DOCX Editor](https:
 
 # Resources
 
-- **Product page:**   [Syncfusion® Blazor Word Processor](https://www.syncfusion.com/docx-editor-sdk/blazor-docx-editor?utm_source=github&utm_medium=listing&utm_campaign=github-blazor-docx-editor-examples) 
+- **Product page:**   [Syncfusion® Blazor DOCX Editor](https://www.syncfusion.com/docx-editor-sdk/blazor-docx-editor?utm_source=github&utm_medium=listing&utm_campaign=github-blazor-docx-editor-examples) 
 
-- **Documentation:**   [Syncfusion® Blazor Word Processor - Documentation](https://help.syncfusion.com/document-processing/word/word-processor/blazor/overview?utm_source=github&utm_medium=listing&utm_campaign=github-blazor-docx-editor-examples) 
+- **Documentation:**   [Syncfusion® Blazor DOCX Editor - Documentation](https://help.syncfusion.com/document-processing/word/word-processor/blazor/overview?utm_source=github&utm_medium=listing&utm_campaign=github-blazor-docx-editor-examples) 
 
-- **Online demo:**   [Syncfusion® Blazor Word Processor - Server Online demo](https://document.syncfusion.com/demos/docx-editor/blazor-server/document-editor/default-functionalities?utm_source=github&utm_medium=listing&utm_campaign=github-blazor-docx-editor-examples) and [Syncfusion® Blazor Word Processor - WASM Online demo](https://document.syncfusion.com/demos/docx-editor/blazor-wasm/document-editor/default-functionalities?utm_source=github&utm_medium=listing&utm_campaign=github-blazor-docx-editor-examples) 
+- **Online demo:**   [Syncfusion® Blazor DOCX Editor - Server Online demo](https://document.syncfusion.com/demos/docx-editor/blazor-server/document-editor/default-functionalities?utm_source=github&utm_medium=listing&utm_campaign=github-blazor-docx-editor-examples) and [Syncfusion® Blazor DOCX Editor - WASM Online demo](https://document.syncfusion.com/demos/docx-editor/blazor-wasm/document-editor/default-functionalities?utm_source=github&utm_medium=listing&utm_campaign=github-blazor-docx-editor-examples) 
 
 # Support and feedback
 
