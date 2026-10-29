@@ -1,0 +1,19 @@
+﻿@page "/"
+
+@using Syncfusion.Blazor.DocumentEditor
+
+<div style="height:100%; width:100%;">
+    <SfDocumentEditorContainer
+        @ref="container"
+        EnableToolbar="true"
+        EnableWebMcp="true"
+        Height="100%">
+
+        <DocumentEditorWebMcpSettings Name="container" />
+
+    </SfDocumentEditorContainer>
+</div>
+
+@code {
+    private SfDocumentEditorContainer? container;
+}
