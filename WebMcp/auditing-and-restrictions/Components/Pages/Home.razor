@@ -1,0 +1,35 @@
+﻿@page "/"
+
+@using Syncfusion.Blazor.DocumentEditor
+
+<div style="height:100%; width:100%;">
+    <SfDocumentEditorContainer
+        @ref="container"
+        EnableToolbar="true"
+        EnableWebMcp="true"
+        Height="100%" >
+
+        <DocumentEditorWebMcpSettings Name="container"/>
+        <DocumentEditorContainerEvents OnWebMcpExecute="OnWebMcpExecute"></DocumentEditorContainerEvents>
+    </SfDocumentEditorContainer>
+</div>
+
+@code {
+    private SfDocumentEditorContainer? container;
+    private void OnWebMcpExecute(DocumentEditorWebMcpToolExecuteEventArgs args)
+    {
+       // Audit all WebMCP tool invocations
+        Console.WriteLine($"[WebMCP] Executing: {args.Name}");
+
+        var commandName = args.Name?.Contains('_') == true
+            ? args.Name[(args.Name.IndexOf('_') + 1)..]
+            : args.Name;
+
+        // Restrict a specific tool
+        if (commandName == "saveDocument")
+        {
+            args.Cancel = true;
+            args.CancellationResponse = "The saveDocument operation has been restricted.";
+        }
+    }
+}
