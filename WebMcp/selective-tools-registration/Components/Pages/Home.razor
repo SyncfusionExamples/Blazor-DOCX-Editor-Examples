@@ -1,0 +1,31 @@
+﻿@page "/"
+
+@using System.ComponentModel
+@using Microsoft.AspNetCore.Http.HttpResults
+@using Microsoft.Extensions.ObjectPool
+@using Syncfusion.Blazor.DocumentEditor
+
+<div style="height:100%; width:100%;">
+    <SfDocumentEditorContainer
+        @ref="container"
+        EnableToolbar="true"
+        EnableWebMcp="true"
+        Height="100%">
+
+        <DocumentEditorWebMcpSettings Name="container" >
+            <DocumentEditorWebMcpTools>
+                <DocumentEditorWebMcpTool
+                    Command="DocumentEditorWebMcpToolCommand.SaveDocument"
+                    Enabled="false" />
+
+            <DocumentEditorWebMcpTool
+                Command="DocumentEditorWebMcpToolCommand.Print"
+                Enabled="false" />
+            </DocumentEditorWebMcpTools>
+        </DocumentEditorWebMcpSettings>
+    </SfDocumentEditorContainer>
+</div>
+
+@code {
+    private SfDocumentEditorContainer? container;
+}
