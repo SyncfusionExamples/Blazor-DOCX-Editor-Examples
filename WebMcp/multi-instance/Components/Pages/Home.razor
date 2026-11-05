@@ -1,0 +1,36 @@
+﻿@page "/"
+
+@using Syncfusion.Blazor.DocumentEditor
+
+<div style="display:flex; gap:20px; height:600px;">
+
+    <!-- First Document Editor -->
+    <div style="width:50%;">
+        <SfDocumentEditorContainer
+            @ref="editor1"
+            EnableToolbar="true"
+            EnableWebMcp="true"
+            Height="100%">
+
+            <DocumentEditorWebMcpSettings Name="documentEditor1" />
+        </SfDocumentEditorContainer>
+    </div>
+
+    <!-- Second Document Editor -->
+    <div style="width:50%;">
+        <SfDocumentEditorContainer
+            @ref="editor2"
+            EnableToolbar="true"
+            EnableWebMcp="true"
+            Height="100%">
+
+            <DocumentEditorWebMcpSettings Name="documentEditor2" />
+        </SfDocumentEditorContainer>
+    </div>
+
+</div>
+
+@code {
+    private SfDocumentEditorContainer? editor1;
+    private SfDocumentEditorContainer? editor2;
+}
