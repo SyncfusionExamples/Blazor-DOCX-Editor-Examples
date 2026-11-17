@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Essential Studio\\Samples-Blazor-DOCX-Editor\\getting-started\\webapp\\BlazorWebApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4268A72B-FD7F-4905-B34A-5DD9A52713D9}|BlazorWebApp.Client\\BlazorWebApp.Client.csproj|d:\\essential studio\\samples-blazor-docx-editor\\getting-started\\webapp\\blazorwebapp\\blazorwebapp.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4268A72B-FD7F-4905-B34A-5DD9A52713D9}|BlazorWebApp.Client\\BlazorWebApp.Client.csproj|solutionrelative:blazorwebapp.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DB08B7C-88FE-481C-803D-254954E441B7}|BlazorWebApp\\BlazorWebApp.csproj|d:\\essential studio\\samples-blazor-docx-editor\\getting-started\\webapp\\blazorwebapp\\blazorwebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DB08B7C-88FE-481C-803D-254954E441B7}|BlazorWebApp\\BlazorWebApp.csproj|solutionrelative:blazorwebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DB08B7C-88FE-481C-803D-254954E441B7}|BlazorWebApp\\BlazorWebApp.csproj|d:\\essential studio\\samples-blazor-docx-editor\\getting-started\\webapp\\blazorwebapp\\blazorwebapp\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5DB08B7C-88FE-481C-803D-254954E441B7}|BlazorWebApp\\BlazorWebApp.csproj|solutionrelative:blazorwebapp\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4268A72B-FD7F-4905-B34A-5DD9A52713D9}|BlazorWebApp.Client\\BlazorWebApp.Client.csproj|d:\\essential studio\\samples-blazor-docx-editor\\getting-started\\webapp\\blazorwebapp\\blazorwebapp.client\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4268A72B-FD7F-4905-B34A-5DD9A52713D9}|BlazorWebApp.Client\\BlazorWebApp.Client.csproj|solutionrelative:blazorwebapp.client\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Essential Studio\\Samples-Blazor-DOCX-Editor\\getting-started\\webapp\\BlazorWebApp\\BlazorWebApp\\Program.cs",
+              "RelativeDocumentMoniker": "BlazorWebApp\\Program.cs",
+              "ToolTip": "D:\\Essential Studio\\Samples-Blazor-DOCX-Editor\\getting-started\\webapp\\BlazorWebApp\\BlazorWebApp\\Program.cs",
+              "RelativeToolTip": "BlazorWebApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-20T18:31:35.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Essential Studio\\Samples-Blazor-DOCX-Editor\\getting-started\\webapp\\BlazorWebApp\\BlazorWebApp.Client\\Program.cs",
+              "RelativeDocumentMoniker": "BlazorWebApp.Client\\Program.cs",
+              "ToolTip": "D:\\Essential Studio\\Samples-Blazor-DOCX-Editor\\getting-started\\webapp\\BlazorWebApp\\BlazorWebApp.Client\\Program.cs",
+              "RelativeToolTip": "BlazorWebApp.Client\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-20T18:31:04.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Home.razor",
+              "DocumentMoniker": "D:\\Essential Studio\\Samples-Blazor-DOCX-Editor\\getting-started\\webapp\\BlazorWebApp\\BlazorWebApp\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "BlazorWebApp\\Components\\Pages\\Home.razor",
+              "ToolTip": "D:\\Essential Studio\\Samples-Blazor-DOCX-Editor\\getting-started\\webapp\\BlazorWebApp\\BlazorWebApp\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "BlazorWebApp\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-20T18:28:34.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "D:\\Essential Studio\\Samples-Blazor-DOCX-Editor\\getting-started\\webapp\\BlazorWebApp\\BlazorWebApp.Client\\_Imports.razor",
+              "RelativeDocumentMoniker": "BlazorWebApp.Client\\_Imports.razor",
+              "ToolTip": "D:\\Essential Studio\\Samples-Blazor-DOCX-Editor\\getting-started\\webapp\\BlazorWebApp\\BlazorWebApp.Client\\_Imports.razor",
+              "RelativeToolTip": "BlazorWebApp.Client\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-20T18:28:24.737Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
