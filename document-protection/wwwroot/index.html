@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User based restrict editing and approval workflow - Blazor DOCX Editor</title>
+    <base href="/" />
+    <link rel="preload" id="webassembly" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="BlazorApp.styles.css" rel="stylesheet" />
+    <script type="importmap"></script>
+    <link href="_content/Syncfusion.Blazor.Themes/bootstrap5.css" rel="stylesheet" />
+    <script src="_content/Syncfusion.Blazor.WordProcessor/scripts/syncfusion-blazor-documenteditor.min.js" type="text/javascript"></script>
+    <script src="data/data-document-protection.js"></script>
+    <script>
+        window.documentEditorInterop = {
+            initWorkflow: function (elementId, defaultEmail) {
+                var interval = setInterval(function () {
+                    var el = document.getElementById(elementId);
+                    if (!el) {
+                        return;
+                    }
+                    var container = el.ej2_instances ? el.ej2_instances[0] : null;
+                    if (!container || !container.documentEditor) {
+                        return;
+                    }
+                    clearInterval(interval);
+                    var documentEditor = container.documentEditor;
+
+                    if (window.documentProtectionData) {
+                        documentEditor.open(JSON.stringify(window.documentProtectionData));
+                    }
+
+                    window.documentEditorInterop.applyUserPermissions(elementId, defaultEmail, 'ReadOnly');
+
+                    documentEditor.beforeAcceptRejectChanges = function (args) {
+                        if (documentEditor.currentUser === 'andrew@example.com') {
+                            args.cancel = true;
+                        }
+                    };
+                }, 100);
+            },
+            applyUserPermissions: function (elementId, email, protectionType) {
+                var el = document.getElementById(elementId);
+                if (!el || !el.ej2_instances) return;
+                var container = el.ej2_instances[0];
+                if (!container || !container.documentEditor) return;
+                var documentEditor = container.documentEditor;
+
+                if (documentEditor.documentHelper && documentEditor.documentHelper.isDocumentProtected) {
+                    documentEditor.editorModule.unProtectDocument();
+                }
+                documentEditor.isReadOnly = false;
+                documentEditor.currentUser = email;
+                if (protectionType !== 'NoProtection') {
+                    documentEditor.editorModule.enforceProtection('', protectionType);
+                }
+                if (email === 'laura@example.com') {
+                    documentEditor.isReadOnly = true;
+                }
+                if (documentEditor.documentHelper && documentEditor.documentHelper.restrictEditingPane) {
+                    documentEditor.documentHelper.restrictEditingPane.showHideRestrictPane(false);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+        <div class="loading-progress-text"></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+</body>
+
+</html>
