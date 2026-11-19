@@ -69,7 +69,7 @@
         <SfDocumentEditorContainer @ref="container"
                                   ID="container"
                                   EnableToolbar="true"
-                                  Height="590px"
+                                  Height="100%"
                                   DocumentEditorSettings="@settings"
                                   ServiceUrl="https://document.syncfusion.com/web-services/docx-editor/api/documenteditor/">
             <DocumentEditorContainerEvents Created="OnContainerCreated"
@@ -234,9 +234,11 @@
         // Unprotect existing document protection if applied
         await container.DocumentEditor.Editor.StopProtectionAsync(string.Empty);
 
-        container.DocumentEditor.IsReadOnly = false;
         container.CurrentUser = user.Email;
         container.DocumentEditor.CurrentUser = user.Email;
+
+        StateHasChanged();
+        await Task.Delay(100);
 
         settings.HighlightEditableRanges = user.Email == "nancy@example.com";
 
@@ -248,8 +250,12 @@
         if (user.Email == "laura@example.com")
         {
             container.DocumentEditor.IsReadOnly = true;
+            container.RestrictEditing = true;
         }
-
-        container.RestrictEditing = false;
+        else
+        {
+            container.DocumentEditor.IsReadOnly = false;
+            container.RestrictEditing = false;
+        }
     }
 }
