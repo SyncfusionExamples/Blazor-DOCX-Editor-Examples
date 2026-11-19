@@ -72,6 +72,7 @@
                                   EnableToolbar="true"
                                   Height="590px"
                                   ServiceUrl="https://document.syncfusion.com/web-services/docx-editor/api/documenteditor/">
+                <DocumentEditorContainerEvents Created="OnCreated"></DocumentEditorContainerEvents>
         </SfDocumentEditorContainer>
     </div>
 </div>
@@ -188,6 +189,18 @@
 
     private string selectedEmail = "nancy@example.com";
     private string bannerText = "Signed in as Nancy (nancy@example.com) - Price Editor";
+
+    public async void OnCreated(object args)
+    {
+        if (container != null)
+        {
+            SfDocumentEditor documentEditor = container.DocumentEditor;
+            if (documentEditor != null)
+            {
+                await documentEditor.OpenAsync(Data.ProtectedData);
+            }
+        }
+    }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
