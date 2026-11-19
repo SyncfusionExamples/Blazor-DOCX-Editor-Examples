@@ -70,6 +70,7 @@
                                   ID="container"
                                   EnableToolbar="true"
                                   Height="590px"
+                                  DocumentEditorSettings="@settings"
                                   ServiceUrl="https://document.syncfusion.com/web-services/docx-editor/api/documenteditor/">
             <DocumentEditorContainerEvents Created="OnContainerCreated"
                                            BeforeAcceptRejectChanges="OnBeforeAcceptRejectChanges">
@@ -169,6 +170,7 @@
 
 @code {
     private SfDocumentEditorContainer? container;
+    private DocumentEditorSettingsModel settings = new DocumentEditorSettingsModel() { HighlightEditableRanges = true };
 
     public class UserInfo
     {
@@ -235,6 +237,8 @@
         container.DocumentEditor.IsReadOnly = false;
         container.CurrentUser = user.Email;
         container.DocumentEditor.CurrentUser = user.Email;
+
+        settings.HighlightEditableRanges = user.Email == "nancy@example.com";
 
         if (user.ProtectionType != ProtectionType.NoProtection)
         {
