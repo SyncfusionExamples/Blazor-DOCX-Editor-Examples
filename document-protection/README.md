@@ -12,7 +12,7 @@ This sample demonstrates the user-based document restrictions and approval workf
 
 Select a user in the dropdown to switch the document restrictions between the roles, and use the table above the dropdown to see each user's permissions at a glance.
 
-![User-based-restriction-in-JavaScript-DOCX-Editor](./images/User-based-restriction-in-JavaScript-DOCX-Editor.gif)
+![User-based-restrict-editing-in-Blazor-DOCX-Editor](./images/User-based-restrict-editing-in-Blazor-DOCX-Editor.gif)
 
 ## How it works
 
