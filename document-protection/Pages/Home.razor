@@ -1,6 +1,6 @@
 @page "/"
 @using Syncfusion.Blazor.DocumentEditor
-
+<div style="width: calc(100vw - 240px); align-items:flex-start; box-sizing:border-box;">
 <div class="sample-header">
     <h1>User based restrict editing and approval workflow in Blazor DOCX Editor</h1>
     <p>
@@ -69,7 +69,7 @@
         <SfDocumentEditorContainer @ref="container"
                                   ID="container"
                                   EnableToolbar="true"
-                                  Height="100%"
+                                  Height="650px"
                                   DocumentEditorSettings="@settings"
                                   ServiceUrl="https://document.syncfusion.com/web-services/docx-editor/api/documenteditor/">
             <DocumentEditorContainerEvents Created="OnContainerCreated"
@@ -78,7 +78,7 @@
         </SfDocumentEditorContainer>
     </div>
 </div>
-
+</div>
 <style>
     .sample-header {
         padding: 16px 24px 8px;
