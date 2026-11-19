@@ -1,6 +1,5 @@
 @page "/"
 @using Syncfusion.Blazor.DocumentEditor
-@inject IJSRuntime JSRuntime
 
 <div class="sample-header">
     <h1>User based restrict editing and approval workflow in Blazor DOCX Editor</h1>
@@ -72,7 +71,9 @@
                                   EnableToolbar="true"
                                   Height="590px"
                                   ServiceUrl="https://document.syncfusion.com/web-services/docx-editor/api/documenteditor/">
-                <DocumentEditorContainerEvents Created="OnCreated"></DocumentEditorContainerEvents>
+            <DocumentEditorContainerEvents Created="OnContainerCreated"
+                                           BeforeAcceptRejectChanges="OnBeforeAcceptRejectChanges">
+            </DocumentEditorContainerEvents>
         </SfDocumentEditorContainer>
     </div>
 </div>
@@ -174,39 +175,38 @@
         public string Name { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string Role { get; set; } = string.Empty;
-        public string ProtectionType { get; set; } = string.Empty;
+        public ProtectionType ProtectionType { get; set; }
         public string Description { get; set; } = string.Empty;
     }
 
     private readonly List<UserInfo> Users = new()
     {
-        new UserInfo { Name = "Nancy", Email = "nancy@example.com", Role = "Price Editor", ProtectionType = "ReadOnly", Description = "Can edit only the price values (editable ranges marked in the document)" },
-        new UserInfo { Name = "Andrew", Email = "andrew@example.com", Role = "Reviewer", ProtectionType = "RevisionsOnly", Description = "All edits are tracked as revisions; cannot accept or reject revisions" },
-        new UserInfo { Name = "Steven", Email = "steven@example.com", Role = "Commenter", ProtectionType = "CommentsOnly", Description = "Can insert comments only; cannot edit document content" },
-        new UserInfo { Name = "Michael", Email = "michael@example.com", Role = "Editor", ProtectionType = "NoProtection", Description = "Full editing access on the entire document" },
-        new UserInfo { Name = "Laura", Email = "laura@example.com", Role = "Viewer", ProtectionType = "ReadOnly", Description = "Read-only access to the document" }
+        new UserInfo { Name = "Nancy", Email = "nancy@example.com", Role = "Price Editor", ProtectionType = ProtectionType.ReadOnly, Description = "Can edit only the price values (editable ranges marked in the document)" },
+        new UserInfo { Name = "Andrew", Email = "andrew@example.com", Role = "Reviewer", ProtectionType = ProtectionType.RevisionsOnly, Description = "All edits are tracked as revisions; cannot accept or reject revisions" },
+        new UserInfo { Name = "Steven", Email = "steven@example.com", Role = "Commenter", ProtectionType = ProtectionType.CommentsOnly, Description = "Can insert comments only; cannot edit document content" },
+        new UserInfo { Name = "Michael", Email = "michael@example.com", Role = "Editor", ProtectionType = ProtectionType.NoProtection, Description = "Full editing access on the entire document" },
+        new UserInfo { Name = "Laura", Email = "laura@example.com", Role = "Viewer", ProtectionType = ProtectionType.ReadOnly, Description = "Read-only access to the document" }
     };
 
     private string selectedEmail = "nancy@example.com";
     private string bannerText = "Signed in as Nancy (nancy@example.com) - Price Editor";
 
-    public async void OnCreated(object args)
+    private async Task OnContainerCreated(object args)
     {
-        if (container != null)
+        if (container?.DocumentEditor != null)
         {
-            SfDocumentEditor documentEditor = container.DocumentEditor;
-            if (documentEditor != null)
-            {
-                await documentEditor.OpenAsync(Data.ProtectedData);
-            }
+            await container.DocumentEditor.OpenAsync(Data.ProtectedData);
+
+            var defaultUser = Users.FirstOrDefault(u => u.Email == selectedEmail) ?? Users[0];
+            await ApplyUserPermissionsAsync(defaultUser);
         }
     }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    private void OnBeforeAcceptRejectChanges(RevisionActionEventArgs args)
     {
-        if (firstRender)
+        if (selectedEmail == "andrew@example.com")
         {
-            await JSRuntime.InvokeVoidAsync("documentEditorInterop.initWorkflow", "container", selectedEmail);
+            args.Cancel = true;
         }
     }
 
@@ -218,7 +218,34 @@
         {
             selectedEmail = user.Email;
             bannerText = $"Signed in as {user.Name} ({user.Email}) - {user.Role}";
-            await JSRuntime.InvokeVoidAsync("documentEditorInterop.applyUserPermissions", "container", user.Email, user.ProtectionType);
+            await ApplyUserPermissionsAsync(user);
         }
+    }
+
+    private async Task ApplyUserPermissionsAsync(UserInfo user)
+    {
+        if (container?.DocumentEditor == null)
+        {
+            return;
+        }
+
+        // Unprotect existing document protection if applied
+        await container.DocumentEditor.Editor.StopProtectionAsync(string.Empty);
+
+        container.DocumentEditor.IsReadOnly = false;
+        container.CurrentUser = user.Email;
+        container.DocumentEditor.CurrentUser = user.Email;
+
+        if (user.ProtectionType != ProtectionType.NoProtection)
+        {
+            await container.DocumentEditor.Editor.EnforceProtectionAsync(string.Empty, user.ProtectionType);
+        }
+
+        if (user.Email == "laura@example.com")
+        {
+            container.DocumentEditor.IsReadOnly = true;
+        }
+
+        container.RestrictEditing = false;
     }
 }
